@@ -1,7 +1,8 @@
-import { Component, computed, input, signal } from '@angular/core';
+import { Component, computed, inject, input, signal } from '@angular/core';
 import { Livre as LivreModel } from '../../model/Livre';
 import { RouterLink } from '@angular/router';
 import { MatCard, MatCardHeader, MatCardFooter, MatCardTitle } from '@angular/material/card';
+import { PanierService } from '../../service/panierService.service';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { MatCard, MatCardHeader, MatCardFooter, MatCardTitle } from '@angular/ma
 })
 export class Livre {
   livre = input.required<LivreModel>();
+
   couleur = computed(() => {
     const couleurs = [
       '#E8D5C4',

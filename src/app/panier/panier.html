@@ -1,0 +1,42 @@
+@if (panier.ouvert()) {
+<div class="overlay" (click)="panier.fermer()"></div>
+<aside class="panier">
+  <div class="panier-header">
+    <h2>Mon panier</h2>
+    <button (click)="panier.fermer()">
+      ×
+    </button>
+  </div>
+  @if (panier.panier().length === 0) {
+  <p class="vide">
+    Votre panier est vide.
+  </p>
+  } @else {
+  <div class="articles">
+    @for (livre of panier.panier(); track $index) {
+    <div class="article">
+      <div>
+        <strong>{{ livre.titre }}</strong>
+        <p>{{ livre.auteur }}</p>
+      </div>
+      <span>
+        {{ livre.prix }} €
+      </span>
+      <button (click)="panier.retirer(livre.id)">
+        ×
+      </button>
+    </div>
+    }
+  </div>
+  <div class="panier-footer">
+    <div class="total">
+      <span>Total</span>
+      <strong>{{ panier.total() }} €</strong>
+    </div>
+    <button class="commander">
+      Commander
+    </button>
+  </div>
+  }
+</aside>
+}

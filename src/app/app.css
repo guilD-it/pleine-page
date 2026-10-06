@@ -2,7 +2,9 @@
     display: flex;
     justify-content: space-between;
     padding: 14px 24px;
-    background: #1b232d;
+    background: #1a1e3b;
+    color: #3E342C;
+
 }
 
 .entete a {

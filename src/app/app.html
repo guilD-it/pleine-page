@@ -1,7 +1,18 @@
 <header class="entete">
-<a routerLink="/"><b>Pleine</b> Page</a>
-<a routerLink="/">Catalogue</a>
+    <a routerLink="/"><b>Pleine</b> Page</a>
+    <a routerLink="/">Catalogue</a>
+    <button class="panier-button" (click)="panier.toggle()"> 🛒
+
+        @if (panier.nombreArticles() > 0) {
+        <span class="badge">
+            {{ panier.nombreArticles() }}
+        </span>
+        }
+
+    </button>
 </header>
 <main>
-<router-outlet />
+    <router-outlet />
 </main>
+
+<app-panier></app-panier>
