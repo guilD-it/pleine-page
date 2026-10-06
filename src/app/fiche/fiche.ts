@@ -1,11 +1,11 @@
 import { Component, computed, input, signal } from '@angular/core';
 import { LIVRES } from '../model/Livre';
 import { RouterLink } from '@angular/router';
-
+import { Livre } from '../catalogue/livre/livre';
 
 @Component({
   selector: 'app-fiche',
-  imports: [RouterLink],
+  imports: [RouterLink, Livre],
   templateUrl: './fiche.html',
   styleUrl: './fiche.css',
 })

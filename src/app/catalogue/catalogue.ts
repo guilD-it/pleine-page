@@ -1,9 +1,10 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, Input, signal } from '@angular/core';
 import { LIVRES } from '../model/Livre';
-import { RouterLink } from '@angular/router';
+import { Livre } from './livre/livre';
+
 @Component({
   selector: 'app-catalogue',
-  imports: [RouterLink],
+  imports: [ Livre],
   templateUrl: './catalogue.html',
   styleUrl: './catalogue.css',
 })

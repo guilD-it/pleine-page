@@ -1,20 +1,23 @@
 @if (livre(); as l) {
 <div class="livre">
-    <div class="couv">{{ l.titre }}</div>
+    <div class="couv">
+        {{ l.titre }}
+    </div>
     <div class="infos">
         <h1>{{ l.titre }}</h1>
-        <p>par {{ l.auteur }}</p>
+        <p class="auteur">par {{ l.auteur }}</p>
         <p class="prix">{{ l.prix }} €</p>
         <button [disabled]="ajoute()" (click)="ajouter()">
-            {{ ajoute() ? 'Ajouté' : 'Ajouter au panier' }}</button>
+            {{ ajoute() ? 'Ajouté' : 'Ajouter au panier' }}
+        </button>
     </div>
 </div>
 } @else {
-<p>Ce livre n'existe pas.</p>
+<p class="not-found">Ce livre n'existe pas.</p>
 }
 <h2>Vous aimerez aussi</h2>
 <div class="suggestions">
     @for (s of suggestions(); track s.id) {
-    <a [routerLink]="['/livre', s.id]">{{ s.titre }}</a>
+    <app-livre [livre]="s"></app-livre>
     }
 </div>

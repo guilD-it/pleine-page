@@ -1,0 +1,25 @@
+<mat-card class="book-card">
+
+    <a [routerLink]="['/livre', livre().id]">
+
+        <div class="book-cover"
+         [style.background-color]="couleur()">
+            <h1>
+                {{ livre().titre }}
+            </h1>
+        </div>
+        <div class="book-info">
+
+            <mat-card-header style="font-size:large;">
+                <mat-card-title>{{ livre().auteur }}</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-footer>
+                {{ livre().prix }} €
+            </mat-card-footer>
+
+        </div>
+
+    </a>
+
+</mat-card>
